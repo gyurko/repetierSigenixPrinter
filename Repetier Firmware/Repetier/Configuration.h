@@ -40,7 +40,7 @@ Hacker H2        = 6
 // ############################################################################################
 // ############ FW version info and build date for LCD and M115 string! #######################
 // ############################################################################################
-#define REPETIER_VERSION "0.92.2"
+#define REPETIER_VERSION "0.92.2-gy"
 #define FIRMWARE_DATE "20171204" // in date format yyyymmdd
 
 #ifndef CONFIGURATION_H
@@ -72,9 +72,9 @@ Hacker H2        = 6
 #define STEPS_PER_ROTATION 200
 #define MICRO_STEPS 16
 #define AXIS_STEPS_PER_MM ((float)(MICRO_STEPS * STEPS_PER_ROTATION) / PULLEY_CIRCUMFERENCE)  // for deltas with 1.8 deg. steppers and 20 tooth GT2 pulleys
-#define XAXIS_STEPS_PER_MM AXIS_STEPS_PER_MM
-#define YAXIS_STEPS_PER_MM AXIS_STEPS_PER_MM
-#define ZAXIS_STEPS_PER_MM AXIS_STEPS_PER_MM
+#define XAXIS_STEPS_PER_MM 80
+#define YAXIS_STEPS_PER_MM 80
+#define ZAXIS_STEPS_PER_MM 80
 
 // ### Hotend and Extruder configuration
 #define MIN_EXTRUDER_TEMP 150
@@ -103,8 +103,8 @@ Hacker H2        = 6
 #define EXT0_PID_D 176.0
 #define EXT0_PID_MAX 210
 #elif HOTEND == 3
-#define MAXTEMP 290
-#define UI_SET_MAX_EXTRUDER_TEMP 280
+#define MAXTEMP 359
+#define UI_SET_MAX_EXTRUDER_TEMP 350
 #define EXT0_PID_INTEGRAL_DRIVE_MAX 230
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 80
 #define EXT0_PID_PGAIN_OR_DEAD_TIME 48.3
@@ -132,7 +132,7 @@ Hacker H2        = 6
 #define EXT0_X_OFFSET 0
 #define EXT0_Y_OFFSET 0
 #define EXT0_STEPS_PER_MM 92.4
-#define EXT0_TEMPSENSOR_TYPE 97 //97
+#define EXT0_TEMPSENSOR_TYPE 8
 #define EXT0_TEMPSENSOR_PIN TEMP_0_PIN
 #define EXT0_HEATER_PIN HEATER_0_PIN
 #define EXT0_STEP_PIN ORIG_E0_STEP_PIN
@@ -423,7 +423,7 @@ Hacker H2        = 6
 #endif
 #define HAVE_HEATED_BED 1
 #define INVERT_X_DIR 1
-#define INVERT_Y_DIR 1
+#define INVERT_Y_DIR 0
 #define INVERT_Z_DIR 1
 #define DELTA_DIAGONAL_ROD 291.06  // ball cup arms
 #define DELTA_MAX_RADIUS 145.0
@@ -599,21 +599,27 @@ Hacker H2        = 6
 #define ENDSTOP_PULLUP_X_MIN true
 #define ENDSTOP_X_MIN_INVERTING false
 #define MIN_HARDWARE_ENDSTOP_X false
+
 #define ENDSTOP_PULLUP_Y_MIN true
 #define ENDSTOP_Y_MIN_INVERTING false
 #define MIN_HARDWARE_ENDSTOP_Y false
+
 #define ENDSTOP_PULLUP_Z_MIN true
-#define ENDSTOP_Z_MIN_INVERTING true
+#define ENDSTOP_Z_MIN_INVERTING false
 #define MIN_HARDWARE_ENDSTOP_Z false
+
 #define ENDSTOP_PULLUP_X_MAX true
 #define ENDSTOP_X_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_X true
+
 #define ENDSTOP_PULLUP_Y_MAX true
 #define ENDSTOP_Y_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_Y true
+
 #define ENDSTOP_PULLUP_Z_MAX true
 #define ENDSTOP_Z_MAX_INVERTING false
 #define MAX_HARDWARE_ENDSTOP_Z true
+
 #define max_software_endstop_r true
 
 #define min_software_endstop_x false
